@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+it main() {
+    int n, originalN, sum = 0, fact = 1, i, rem;
+
+    printf("Enter any number: ");
+    scanf("%d", &n);
+
+    originalN = n; // Save the original value of n
+
+    while (n != 0) {
+        rem = n % 10;
+
+        for (i = 1; i <= rem; i++)  {
+            fact = fact * i;
+        }
+
+        sum = sum + fact;
+        fact = 1;
+        n = n / 10;
+    }
+
+    if (sum == originalN) {
+        printf("STRONG\n");
+    } else {
+        printf("Not strong\n");
+    }
+
+    return 0;
+}
+
